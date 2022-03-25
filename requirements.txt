@@ -1,0 +1,13 @@
+aiofiles
+aiosqlite
+asyncua
+cffi
+cryptography
+lxml
+numpy
+pandas
+pycparser
+python-dateutil
+pytz
+six
+typing-extensions
