@@ -1,0 +1,32 @@
+py -3 -m venv .venv1
+
+py -m pip install --upgrade pip
+
+
+
+py -m venv env
+
+.\env\Scripts\activate
+deactivate
+
+py -m pip --version
+py -m pip install
+
+py -m pip install -r requirements.txt
+py -m pip freeze
+
+
+
+//docker
+
+docker build -t python:0.0.1 .
+
+docker images
+
+docker run python:0.0.1
+
+//ioxclient
+
+
+docker build -t ioxapp .
+ioxclient docker package --use-targz --descriptor-merge opcua:1.3 . 

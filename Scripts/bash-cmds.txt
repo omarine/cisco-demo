@@ -1,0 +1,37 @@
+curl https://raw.githubusercontent.com/Azure/azure-iot-sdk-c/master/tools/CACertificates/certGen.sh --output certGen.sh
+curl https://raw.githubusercontent.com/Azure/azure-iot-sdk-c/master/tools/CACertificates/openssl_root_ca.cnf --output openssl_root_ca.cnf
+curl https://raw.githubusercontent.com/Azure/azure-iot-sdk-c/master/tools/CACertificates/openssl_device_intermediate_ca.cnf --output openssl_device_intermediate_ca.cnf
+chmod 700 certGen.sh
+
+
+./certGen.sh create_root_and_intermediate
+
+./certGen.sh create_device_certificate_from_intermediate x509device2
+
+./certGen.sh create_verification_certificate 6B9D4045746AA3CF63F857DF57641B859D0193AFEA21CF1E
+
+openssl x509 -outform der -in your-cert.pem -out your-cert.crt
+
+
+//remove pass phrase
+ openssl rsa -in azure-iot-test-only.intermediate.key.pem -out azure-iot-test-only-new.intermediate.key.pem
+ 
+//convert to pkcs8
+ openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in azure-iot-test-only.intermediate.key.pem -out azure-iot-test-only.intermediate.pkcs8.pem
+ 
+ 
+ 
+ 
+ 
+ 
+ https://45cc9528-b21d-4efe-9381-65fad28f9418.eu.ciscoiot.com:443/conn
+
+CzFMvJAHWwb0FDYx8h6LdXrfJvQm9TG6eFqPiiJyRvKaQeAo
+
+#app-hosting connect appid ei_ir1101 session
+
+cd /iox_data/logs
+
+
+ 45cc9528-b21d-4efe-9381-65fad28f9418.eu.ciscoiot.com
+
