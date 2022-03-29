@@ -1,0 +1,1 @@
+https://github.com/Azure/iotedge/tree/main/tools/CACertificates
